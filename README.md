@@ -7,7 +7,7 @@
 * Radeon Sapphire PULSE RX 580 8GB
 * Crucial mx500 500GB SSD
 
-You need to generate your own serials in the config.plist! (Search for GENERATE)
+You need to generate your own serials in the config.plist! (Search for YOUR_OWN_)
 
 ### About this mac:
 ![](https://github.com/Conor-Burns/OpenCore-M93p-mini-tower/blob/main/about.jpg)
