@@ -144,6 +144,8 @@
 			<integer>0</integer>
 			<key>RebuildAppleMemoryMap</key>
 			<false/>
+			<key>ResizeAppleGpuBars</key>
+			<integer>-1</integer>
 			<key>SetupVirtualMap</key>
 			<true/>
 			<key>SignalAppleOS</key>
@@ -180,27 +182,9 @@
 				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
-				<string>IntelMausi.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/IntelMausi</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
 				<string>Lilu.kext</string>
 				<key>Comment</key>
-				<string></string>
+				<string>Patch engine</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -208,7 +192,7 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string></string>
+				<string>8.0.0</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -218,7 +202,7 @@
 				<key>BundlePath</key>
 				<string>VirtualSMC.kext</string>
 				<key>Comment</key>
-				<string></string>
+				<string>SMC emulator</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -226,17 +210,17 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string></string>
+				<string>8.0.0</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>Any</string>
+				<string>x86_64</string>
 				<key>BundlePath</key>
 				<string>WhateverGreen.kext</string>
 				<key>Comment</key>
-				<string></string>
+				<string>Video patches</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -244,7 +228,7 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string></string>
+				<string>10.0.0</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -254,7 +238,7 @@
 				<key>BundlePath</key>
 				<string>AppleALC.kext</string>
 				<key>Comment</key>
-				<string></string>
+				<string>Audio patches</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -262,7 +246,25 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
+				<string>8.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
+				<string>IntelMausi.kext</string>
+				<key>Comment</key>
+				<string>Intel Ethernet LAN</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/IntelMausi</string>
+				<key>MaxKernel</key>
 				<string></string>
+				<key>MinKernel</key>
+				<string>13.0.0</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -406,7 +408,7 @@
 			<key>HibernateMode</key>
 			<string>None</string>
 			<key>HideAuxiliary</key>
-			<false/>
+			<true/>
 			<key>LauncherOption</key>
 			<string>Disabled</string>
 			<key>LauncherPath</key>
@@ -433,7 +435,7 @@
 			<key>AppleDebug</key>
 			<false/>
 			<key>ApplePanic</key>
-			<true/>
+			<false/>
 			<key>DisableWatchDog</key>
 			<true/>
 			<key>DisplayDelay</key>
@@ -445,7 +447,7 @@
 			<key>SysReport</key>
 			<false/>
 			<key>Target</key>
-			<integer>3</integer>
+			<integer>0</integer>
 		</dict>
 		<key>Entries</key>
 		<array/>
@@ -483,28 +485,7 @@
 			<string>Optional</string>
 		</dict>
 		<key>Tools</key>
-		<array>
-			<dict>
-				<key>Arguments</key>
-				<string></string>
-				<key>Auxiliary</key>
-				<true/>
-				<key>Comment</key>
-				<string>OpenShell.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Flavour</key>
-				<string>Auto</string>
-				<key>Name</key>
-				<string>OpenShell.efi</string>
-				<key>Path</key>
-				<string>OpenShell.efi</string>
-				<key>RealPath</key>
-				<false/>
-				<key>TextMode</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 	</dict>
 	<key>NVRAM</key>
 	<dict>
@@ -514,8 +495,6 @@
 			<dict>
 				<key>DefaultBackgroundColor</key>
 				<data>AAAAAA==</data>
-				<key>UIScale</key>
-				<data>AQ==</data>
 			</dict>
 			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
 			<dict>
@@ -524,6 +503,8 @@
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
+				<key>ForceDisplayRotationInEFI</key>
+				<integer>0</integer>
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
@@ -534,15 +515,12 @@
 				<string>de-DE:3</string>
 				<key>run-efi-updater</key>
 				<string>No</string>
-				<key>ForceDisplayRotationInEFI</key>
-				<integer>0</integer>
 			</dict>
 		</dict>
 		<key>Delete</key>
 		<dict>
 			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 			<array>
-				<string>UIScale</string>
 				<string>DefaultBackgroundColor</string>
 			</array>
 			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
@@ -607,13 +585,13 @@
 			<key>ProcessorType</key>
 			<integer>0</integer>
 			<key>ROM</key>
-			<data>RDnEkEXP</data>
+			<data>YOUR_OWN_ROM</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemMemoryStatus</key>
 			<string>Auto</string>
 			<key>SystemProductName</key>
-			<string>iMac15,1</string>
+			<string>iMac17,1</string>
 			<key>SystemSerialNumber</key>
 			<string>YOUR_OWN_SERIAL</string>
 			<key>SystemUUID</key>
@@ -653,6 +631,8 @@
 			<string>Builtin</string>
 			<key>CustomDelays</key>
 			<false/>
+			<key>GraphicsInputMirroring</key>
+			<true/>
 			<key>KeyInitialDelay</key>
 			<integer>50</integer>
 			<key>KeySubsequentDelay</key>
@@ -687,9 +667,36 @@
 		<true/>
 		<key>Drivers</key>
 		<array>
-			<string>HfsPlus.efi</string>
-			<string>OpenCanopy.efi</string>
-			<string>OpenRuntime.efi</string>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Comment</key>
+				<string>HFS+ Driver</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>HfsPlus.efi</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>OpenRuntime.efi</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>OpenCanopy.efi</string>
+			</dict>
 		</array>
 		<key>Input</key>
 		<dict>
@@ -726,6 +733,8 @@
 			<false/>
 			<key>ProvideConsoleGop</key>
 			<true/>
+			<key>ReconnectGraphicsOnConnect</key>
+			<false/>
 			<key>ReconnectOnResChange</key>
 			<false/>
 			<key>ReplaceTabWithSpace</key>
@@ -738,6 +747,8 @@
 			<string>BuiltinGraphics</string>
 			<key>UgaPassThrough</key>
 			<false/>
+			<key>UIScale</key>
+			<integer>0</integer>
 		</dict>
 		<key>ProtocolOverrides</key>
 		<dict>
@@ -786,8 +797,12 @@
 			<false/>
 			<key>EnableVectorAcceleration</key>
 			<true/>
+			<key>EnableVmx</key>
+			<false/>
 			<key>ExitBootServicesDelay</key>
 			<integer>0</integer>
+			<key>ForceOcWriteFlash</key>
+			<false/>
 			<key>ForgeUefiSupport</key>
 			<false/>
 			<key>IgnoreInvalidFlexRatio</key>
@@ -798,6 +813,8 @@
 			<false/>
 			<key>RequestBootVarRouting</key>
 			<true/>
+			<key>ResizeGpuBars</key>
+			<integer>-1</integer>
 			<key>TscSyncTimeout</key>
 			<integer>0</integer>
 			<key>UnblockFsConnect</key>
